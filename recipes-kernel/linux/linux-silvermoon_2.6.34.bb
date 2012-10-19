@@ -2,7 +2,7 @@ SECTION = "kernel"
 DESCRIPTION = "Linux kernel for Silvermoon platforms"
 LICENSE = "GPLv2"
 KERNEL_IMAGETYPE = "zImage"
-
+PR = "r0"
 require linux.inc
 
 S = "${WORKDIR}/git"
