@@ -11,7 +11,7 @@ MULTI_CONFIG_BASE_SUFFIX = ""
 BRANCH = "kovan"
 
 COMPATIBLE_MACHINE = "(kovan)"
-SRCREV = "d98e785d2d1cf0d26da523c5d1835a62da9c6b89"
+SRCREV = "a1663d8b52f4769fb0ef42d0e48315a1cbfcd6ae"
 
 SRC_URI += "git://github.com/kipr/linux.git;branch=${BRANCH} \
 	file://defconfig"
