@@ -3,6 +3,8 @@
 require systemd-image.bb
 
 IMAGE_INSTALL += " \
+	gcc \
+	g++ \
 	usbutils \
 	i2c-tools \
 	alsa-utils \
