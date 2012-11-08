@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.34
-# Fri Oct  5 16:20:10 2012
+# Thu Nov  8 15:09:57 2012
 #
 CONFIG_ARM=y
 CONFIG_HAVE_PWM=y
@@ -267,7 +267,7 @@ CONFIG_CPU_PXA168_A0=y
 #
 # Marvell PXA168/910/MMP2 Implmentations
 #
-CONFIG_MACH_ASPENITE=y
+# CONFIG_MACH_ASPENITE is not set
 # CONFIG_MACH_ZYLONITE2 is not set
 CONFIG_MACH_KOVAN=y
 # CONFIG_MACH_IPCAM is not set
@@ -1286,7 +1286,7 @@ CONFIG_I2C_PXA=y
 # CONFIG_I2C_DEBUG_ALGO is not set
 # CONFIG_I2C_DEBUG_BUS is not set
 CONFIG_SPI=y
-# CONFIG_SPI_DEBUG is not set
+CONFIG_SPI_DEBUG=y
 CONFIG_SPI_MASTER=y
 
 #
