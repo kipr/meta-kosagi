@@ -2,9 +2,38 @@
 
 require systemd-image.bb
 
+CONMANPKGS = "networkmanager"
+
 IMAGE_INSTALL += " \
+	autoconf \
+	automake \
+	binutils \
+	binutils-symlinks \
+	coreutils \
+	cpp \
+	cpp-symlinks \
+	ccache \
+	diffutils \
 	gcc \
+	gcc-symlinks \
 	g++ \
+	g++-symlinks \
+	gettext \
+	make \
+	intltool \
+	libstdc++ \
+	libstdc++-dev \
+	libtool \
+	perl-module-re \
+	perl-module-text-wrap \
+	pkgconfig \
+	findutils \
+	quilt \
+	less \
+	ldd \
+	file \
+	tcl \
+	\
 	usbutils \
 	i2c-tools \
 	alsa-utils \
