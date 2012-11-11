@@ -132,5 +132,5 @@ IMAGE_INSTALL += " \
 	kernel-module-zr364xx \
 	kernel-module-usbtest kernel-module-g-zero \
 "
-export IMAGE_BASENAME = "hw-bringup"
+export IMAGE_BASENAME = "term"
 
