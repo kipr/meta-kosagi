@@ -3,7 +3,7 @@ SOC_FAMILY = "pxa168"
 require conf/machine/include/tune-arm926ejs.inc
 
 # Increase this everytime you change something in the kernel
-MACHINE_KERNEL_PR = "r63"
+MACHINE_KERNEL_PR = "r64"
 
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-silvermoon"
@@ -36,8 +36,8 @@ kosagi_make_rom() {
         --blockdef=/dev/null,16384,cpid,1,0,0,0 \
         --blockdef=/dev/null,1024,dcid,1,0,0,0 \
         --blockdef=${DEPLOY_DIR_IMAGE}/logo.raw565.gz,153600,logo,1,0,0,0 \
-        --blockdef=${DEPLOY_DIR_IMAGE}/kovan-lx9.bit,340992,LX9,1,0,0,0 \
-        --blockdef=${DEPLOY_DIR_IMAGE}/kovan-lx45.bit,1484800,LX45,1,0,0,0 \
+        --blockdef=${DEPLOY_DIR_IMAGE}/kovan.bit,340992,LX9,1,0,0,0 \
+        --blockdef=/dev/zero,1484800,LX45,1,0,0,0 \
         > ${DEPLOY_DIR_IMAGE}/config_block.bin
 
 
