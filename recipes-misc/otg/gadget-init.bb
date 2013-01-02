@@ -1,6 +1,6 @@
 DESCRIPTION = "Units to initialize usb gadgets"
 
-PR = "r2"
+PR = "r3"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=3f40d7994397109285ec7b81fdeb3b58"
@@ -9,7 +9,6 @@ COMPATIBLE_MACHINE = "(kovan)"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 SRC_URI = "file://storage-gadget-init.service \
-           file://serial-gadget-init.service \
            file://network-gadget-init.service \
            file://udhcpd.service \
            file://udhcpd.conf \
@@ -22,7 +21,7 @@ do_install() {
 	install -d ${D}${base_libdir}/systemd/system/basic.target.wants
 	install -m 0644 ${WORKDIR}/*.service ${D}${base_libdir}/systemd/system
 
-	for i in ${WORKDIR}/serial-gadget-init.service ; do
+	for i in ${WORKDIR}/network-gadget-init.service ; do
 		install -m 0644 $i ${D}${base_libdir}/systemd/system
 		ln -sf ../$(basename $i) ${D}${base_libdir}/systemd/system/basic.target.wants/
 	done
@@ -37,15 +36,12 @@ do_install() {
 	install -d ${D}${sysconfdir}/tmpfiles.d
 }
 
-PACKAGES =+ "${PN}-storage ${PN}-serial ${PN}-network ${PN}-udhcpd"
+PACKAGES =+ "${PN}-storage ${PN}-network ${PN}-udhcpd"
 
 FILES_${PN} = "${sysconfdir}/tmpfiles.d"
 
 FILES_${PN}-storage = "${base_libdir}/systemd/system/storage-gadget-init.service \
                        ${base_libdir}/systemd/system/basic.target.wants/storage-gadget-init.service"
-
-FILES_${PN}-serial = "${base_libdir}/systemd/system/serial-gadget-init.service \
-                       ${base_libdir}/systemd/system/basic.target.wants/serial-gadget-init.service"
 
 FILES_${PN}-network = "${base_libdir}/systemd/system/network-gadget-init.service \
                        ${base_libdir}/systemd/system/basic.target.wants/network-gadget-init.service \
