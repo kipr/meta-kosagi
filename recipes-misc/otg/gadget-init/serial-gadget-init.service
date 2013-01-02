@@ -1,0 +1,11 @@
+[Unit]
+Description=Start usb serial gadget
+After=dev-mmcblk0p1.device
+
+[Service]
+RemainAfterExit=yes
+ExecStart=/sbin/modprobe g_serial
+ExecStop=/sbin/rmmod g_serial
+
+[Install]
+WantedBy=basic.target
